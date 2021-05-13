@@ -1,0 +1,127 @@
+@charset "utf-8";
+$sp-width: 640px;
+$sp-width2: 640px;
+$tab-width: 834px;
+$base-width: 1200px;
+$text-color: #333;
+$base-color: #fdf1df;
+$acc-color: #298d72;
+$main-color:#94713a;
+$mgauto: 0 auto;
+$img: "../images/home";
+$img2: "../images/contents";
+
+@function get_vw($size, $viewport:768){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+@mixin mgt_vw($margin-top:10){
+  margin-top: $margin-top * 1px;
+  margin-top: get_vw($margin-top);
+}
+@mixin mgb_vw($margin-bottom:10){
+  margin-bottom: $margin-bottom * 1px;
+  margin-bottom: get_vw($margin-bottom);
+}
+@mixin mgl_vw($margin-left:10){
+  margin-left: $margin-left * 1px;
+  margin-left: get_vw($margin-left);
+}
+@mixin mgr_vw($margin-right:10){
+  margin-right: $margin-right * 1px;
+  margin-right: get_vw($margin-right);
+}
+@mixin bg100 {
+    margin-right: calc(((100vw - 100%) / 2) * -1) !important;
+    margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+}
+@mixin btn{
+  display: block;
+  background-color: $acc-color;
+  text-align: center;
+}
+@mixin btn2{
+  display: block;
+  background-color: $main-color;
+  text-align: center;
+}
+
+@mixin flex($display:flex,$justify:space-between){
+  display: $display;
+  justify-content: $justify;
+  flex-wrap: wrap;
+  align-items:center;
+}
+
+@mixin t-center{
+  position:  absolute;
+  top: 50%;
+  transform:translateY(-50%);
+}
+
+@mixin center{
+  position:  absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin bp1200{
+    @media only screen and (max-width: 1200px){
+     @content;
+  }
+}
+@mixin bp1100{
+    @media only screen and (max-width: 1100px){
+     @content;
+  }
+}
+@mixin bp1000{
+    @media only screen and (max-width: 1000px){
+     @content;
+  }
+}
+@mixin tabsp {
+	@media only screen and (max-width: $tab-width){
+		@content;
+	}
+}
+@mixin tab {
+	@media screen and (min-width: $sp-width2) and (max-width: $tab-width){
+		@content;
+	}
+}
+@mixin sp {
+	@media only screen and (max-width: $sp-width){
+		@content;
+	}
+}
+@font-face {
+   font-family: "Noto Serif Japanese";
+   font-style: normal;
+   font-weight: 400;/*-Normal-*/
+   src: url('../font/NotoSerifCJKjp/NotoSerifCJKjp-Regular.woff') format('woff'),
+        url('../font/NotoSerifCJKjp/NotoSerifCJKjp-Regular.woff2') format('woff2');
+}
+@font-face {
+   font-family: "Noto Serif Japanese";
+   font-style: normal;
+   font-weight: 500;/*-Medium-*/
+   src: url('../font/NotoSerifCJKjp/NotoSerifCJKjp-Medium.woff') format('woff'),
+        url('../font/NotoSerifCJKjp/NotoSerifCJKjp-Medium.woff2') format('woff2');
+}
+@font-face {
+   font-family: "Noto Serif Japanese";
+   font-style: normal;
+   font-weight: 700;/*-Bold-*/
+   src: url('../font/NotoSerifCJKjp/NotoSerifCJKjp-Bold.woff') format('woff'),
+        url('../font/NotoSerifCJKjp/NotoSerifCJKjp-Bold.woff2') format('woff2');
+}
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+$mincho: 'Noto Serif Japanese' , "游明朝体", "Yu Mincho", YuMincho,"ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+$gothic: 'Noto Sans Japanese',"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;

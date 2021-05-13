@@ -1,0 +1,12 @@
+@charset "utf-8";
+.btn{
+	position: relative;
+		@include btn;
+	&:after{
+		@include t-center;
+		right: 15px;
+		content: "\f0a9";
+		font-family: "Font Awesome 5 pro";
+	}
+}
+

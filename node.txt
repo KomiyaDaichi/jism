@@ -1,0 +1,5 @@
+mklink /d C:\Users\h.murata\Documents\AISCSS\e\lp\scss\node_modules C:\Users\h.murata\Documents\AISCSS\default\node_modules
+
+
+
+mklink /d C:\Users\h.murata\Documents\AISCSS\s\suzakiseisakujo\node_modules C:\Users\h.murata\Documents\AISCSS\default\node_modules
